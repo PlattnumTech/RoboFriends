@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import CardList from "../Components/CardList";
 import SearchBox from '../Components/SearchBox';
 import './App.css';
+import ErrorBoundarys from  '../Components/Errorboundary'
 import Scroll from '../Components/Scroll.js';
+import ErrorBoundary from '../Components/Errorboundary';
 
 
 //Smart Component
@@ -43,7 +45,9 @@ class App extends Component {
                 <h1 className='F1'>RoboFriends</h1>
                 <SearchBox searchChange={this.onsearchChange}/>
                 <Scroll>
+                 <ErrorBoundary>
                 <CardList robots={filteredRobots} />
+                </ErrorBoundary>    
                 </Scroll>
             </div>
           );
